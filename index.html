@@ -3,40 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title > Favela Cafe  </title>
-<link rel="icon" type="image/png" href="favelacafe.png">
-
-
-<head>
-    <link rel="icon" type="image/png" href="favelacafe.png">
-</head>
+<title>Favela Cafe</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-
-
-    .nav-logo{
-  display:flex;
-  align-items:center;
-  gap: 40px;
-}
-
-.nav-logo img{
-  height:40px;
-  width:auto;
-}
-
-.nav-logo span{
-  color:var(--gold);
-  font-weight:500;
-  font-size:1.1rem;
-}
-:root{
-  --gold:#c9a24d;
-  --dark:#0e0e0e;
-}
+:root{--gold:#c9a24d;--dark:#0e0e0e}
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
@@ -44,7 +16,6 @@ body{
   background:var(--dark);
   color:#eee;
 }
-
 nav{
   position:fixed;
   top:0;
@@ -53,14 +24,13 @@ nav{
   background:rgba(0,0,0,.92);
   z-index:100;
 }
-
 nav strong{color:var(--gold)}
 
 header{
-  height:65vh;
+  height:60vh;
   background:
   linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80")
+  url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
   center/cover;
   display:flex;
   justify-content:center;
@@ -73,24 +43,38 @@ header h1{
   color:var(--gold);
 }
 
-section{padding:110px 8%}
+section{padding:90px 8%}
 
 .section-title{
   text-align:center;
   font-family:'Playfair Display',serif;
   color:var(--gold);
   font-size:2.2rem;
-  margin-bottom:30px;
+  margin-bottom:40px;
 }
 
+/* KARTLAR */
 .menu-covers{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.favela-btn{
+  background:linear-gradient(135deg,#c9a24d,#f1d27a);
+  color:#000;
+  border:none;
+  padding:15px 34px;
+  border-radius:999px;
+  font-size:1rem;
+  font-weight:600;
+  letter-spacing:.5px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(201,162,77,.35);
+  transition:all .35s ease;
 }
 
 .cover{
-  height:210px;
+  height:190px;
   position:relative;
   border-radius:18px;
   overflow:hidden;
@@ -111,17 +95,11 @@ section{padding:110px 8%}
   justify-content:center;
   align-items:center;
   color:var(--gold);
-  font-size:1.6rem;
+  font-size:1.4rem;
   font-family:'Playfair Display',serif;
 }
 
 .menu-list{display:none}
-
-.sub-title{
-  color:var(--gold);
-  margin:30px 0 10px;
-  font-weight:500;
-}
 
 .menu-item{
   display:flex;
@@ -132,47 +110,16 @@ section{padding:110px 8%}
 
 .price{color:var(--gold)}
 
-.note{
-  margin-top:15px;
-  font-style:italic;
-  color:#aaa;
-}
-
 .back{
   margin-top:40px;
   text-align:center;
-  cursor:pointer;
   color:var(--gold);
-}
-.favela-btn{
-  background:linear-gradient(135deg,#c9a24d,#f1d27a);
-  color:#000;
-  border:none;
-  padding:15px 34px;
-  border-radius:999px;
-  font-size:1rem;
-  font-weight:600;
-  letter-spacing:.5px;
   cursor:pointer;
-  box-shadow:0 10px 25px rgba(201,162,77,.35);
-  transition:all .35s ease;
-}
-
-.favela-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 18px 40px rgba(201,162,77,.55);
-}
-
-.favela-btn:active{
-  transform:translateY(0);
-  box-shadow:0 10px 25px rgba(201,162,77,.35);
 }
 </style>
 </head>
-
 <body>
-
-<nav>
+    <nav>
     <div>
         <span><h2>Favela Cafe</h2></span>
         <div style="text-align:center;margin-top:40px"></div>
@@ -182,46 +129,43 @@ section{padding:110px 8%}
 </button>
   </div>
 </nav>
+</body>
 
-<header><h1>Favela Cafe</h1></header>
+<body>
 
-<!-- KAPAKLAR -->
+<header>
+  <h1>Favela Cafe Menü</h1>
+</header>
+
+<!-- ===== ALT BAŞLIKLAR KART ===== -->
 <section id="covers">
 <h2 class="section-title">Menüler</h2>
 
 <div class="menu-covers">
 
-<div class="cover" onclick="openMenu('food')">
-<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80">
-<span>Yiyecekler</span>
-</div>
+<div class="cover" onclick="openMenu('ana-yemek')"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"><span>Ana Yemekler</span></div>
+<div class="cover" onclick="openMenu('gozleme')"><img src="gözleme.webp"><span>Gözlemeler</span></div>
+<div class="cover" onclick="openMenu('kahvalti')"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d"><span>Kahvaltı</span></div>
+<div class="cover" onclick="openMenu('pizza')"><img src="pizza.png"><span>Pizzalar</span></div>
+<div class="cover" onclick="openMenu('burger')"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349"><span>Burger & Atıştırmalık</span></div>
+<div class="cover" onclick="openMenu('salata')"><img src="salata.jpg"><span>Salatalar</span></div>
+<div class="cover" onclick="openMenu('makarna')"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e"><span>Makarnalar</span></div>
 
-<div class="cover" onclick="openMenu('drink')">
-<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80">
-<span>İçecekler</span>
-</div>
+<div class="cover" onclick="openMenu('sicak-kahve')"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"><span>Sıcak Kahveler</span></div>
+<div class="cover" onclick="openMenu('soguk-kahve')"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348"><span>Soğuk Kahveler</span></div>
+<div class="cover" onclick="openMenu('milkshake')"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699"><span>Milkshake</span></div>
+<div class="cover" onclick="openMenu('frozen')"><img src="frozen.jpg"><span>Frozen</span></div>
 
-<div class="cover" onclick="openMenu('dessert')">
-<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80">
-<span>Tatlılar</span>
-</div>
-
-<div class="cover" onclick="openMenu('hookah')">
-<img src="nargile.png">
-<span>Nargileler</span>
-</div>
+<div class="cover" onclick="openMenu('tatli')"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b"><span>Tatlılar</span></div>
+<div class="cover" onclick="openMenu('dondurma')"><img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f"><span>Dondurmalar</span></div>
+<div class="cover" onclick="openMenu('nargile')"><img src="nargile.png"><span>Nargileler</span></div>
 
 </div>
 </section>
 
-<!-- ================= YİYECEKLER ================= -->
 
-
-<section class="menu-list" id="food">
-<h2 class="section-title">Yiyecekler</h2>
-
-
-<div class="sub-title">Ana Yemekler</div>
+<section class="menu-list" id="ana-yemek">
+<h2 class="section-title">Ana Yemekler</h2>
 <div class="menu-item"><span>Köfte Izgara</span><span class="price">500 TL</span></div>
 <div class="menu-item"><span>Körili Tavuk</span><span class="price">430 TL</span></div>
 <div class="menu-item"><span>Tavuk Izgara</span><span class="price">430 TL</span></div>
@@ -231,8 +175,12 @@ section{padding:110px 8%}
 <div class="menu-item"><span>Fajita Tavuklu</span><span class="price">450 TL</span></div>
 <div class="menu-item"><span>Saç Tava</span><span class="price">550 TL</span></div>
 <div class="menu-item"><span>Şinitzel</span><span class="price">300 TL</span></div>
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
 
-<div class="sub-title">Gözlemeler</div>
+<section class="menu-list" id="gozleme">
+<h2 class="section-title">Gözlemeler</h2>
+
 <div class="menu-item"><span>Kaşarlı</span><span class="price">250 TL</span></div>
 <div class="menu-item"><span>Kaşarlı Kavurmalı</span><span class="price">350 TL</span></div>
 <div class="menu-item"><span>Kıymalı</span><span class="price">250 TL</span></div>
@@ -240,16 +188,30 @@ section{padding:110px 8%}
 <div class="menu-item"><span>Kavurmalı</span><span class="price">300 TL</span></div>
 <div class="menu-item"><span>Sucuklu</span><span class="price">250 TL</span></div>
 
-<div class="sub-title">Kahvaltı</div>
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="kahvalti">
+<h2 class="section-title">Kahvaltı</h2>
+
 <div class="menu-item"><span>Tek Kişilik Kahvaltı</span><span class="price">700 TL</span></div>
 <div class="menu-item"><span>Çift Kişilik Kahvaltı</span><span class="price">1100 TL</span></div>
-<div class="note">Kahvaltı yanında sınırsız çay servisimiz vardır.</div>
 
-<div class="sub-title">Pizza</div>
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="pizza">
+<h2 class="section-title">Pizzalar</h2>
+
 <div class="menu-item"><span>Margarita Pizza</span><span class="price">350 TL</span></div>
 <div class="menu-item"><span>Karışık Pizza</span><span class="price">400 TL</span></div>
 
-<div class="sub-title">Burger & Atıştırmalık</div>
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="burger">
+<h2 class="section-title">Burger & Atıştırmalık</h2>
+
 <div class="menu-item"><span>Hamburger</span><span class="price">350 TL</span></div>
 <div class="menu-item"><span>Cheeseburger</span><span class="price">380 TL</span></div>
 <div class="menu-item"><span>Çıtır Burger</span><span class="price">300 TL</span></div>
@@ -259,12 +221,22 @@ section{padding:110px 8%}
 <div class="menu-item"><span>Nugget Tabağı</span><span class="price">250 TL</span></div>
 <div class="menu-item"><span>Sigara Böreği</span><span class="price">210 TL</span></div>
 
-<div class="sub-title">Salatalar</div>
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="salata">
+<h2 class="section-title">Salatalar</h2>
+
 <div class="menu-item"><span>Tavuklu Sezar</span><span class="price">250 TL</span></div>
 <div class="menu-item"><span>Bahçe Salata</span><span class="price">100 TL</span></div>
 <div class="menu-item"><span>Ton Balıklı Salata</span><span class="price">280 TL</span></div>
 
-<div class="sub-title">Makarnalar</div>
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="makarna">
+<h2 class="section-title">Makarnalar</h2>
+
 <div class="menu-item"><span>Fettucini</span><span class="price">270 TL</span></div>
 <div class="menu-item"><span>Köri Soslu Makarna</span><span class="price">300 TL</span></div>
 <div class="menu-item"><span>Napoliten Soslu</span><span class="price">250 TL</span></div>
@@ -272,15 +244,70 @@ section{padding:110px 8%}
 <div class="menu-item"><span>Ton Balıklı Makarna</span><span class="price">330 TL</span></div>
 <div class="menu-item"><span>Spagetti Bolonez</span><span class="price">250 TL</span></div>
 
-
+<div class="back" onclick="goBack()">← Menüye Dön</div>
 </section>
 
-<!-- ================= İÇECEKLER ================= -->
-<section class="menu-list" id="drink">
-<h2 class="section-title">İçecekler</h2>
+<section class="menu-list" id="dondurma">
+<h2 class="section-title">Dondurmalar</h2>
+
+<div class="menu-item"><span>Çilekli</span><span class="price">50 TL</span></div>
+<div class="menu-item"><span>Vanilyalı</span><span class="price">50 TL</span></div>
+<div class="menu-item"><span>Kakaolu</span><span class="price">50 TL</span></div>
+<div class="menu-item"><span>Limonlu</span><span class="price">50 TL</span></div>
+<div class="menu-item"><span>Karamel</span><span class="price">50 TL</span></div>
+<div class="menu-item"><span>Böğürtlen</span><span class="price">50 TL</span></div>
+
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="milkshake">
+<h2 class="section-title">Milkshake</h2>
+
+<div class="menu-item"><span>Çilekli Milkshake</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Karamelli Milkshake</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Muzlu Milkshake</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Çikolatalı Milkshake</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Vanilyalı Milkshake</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Oreo Milkshake</span><span class="price">250 TL</span></div>
+
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="frozen">
+<h2 class="section-title">Frozen</h2>
+
+<div class="menu-item"><span>Çilekli Frozen</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Yeşil Elma Frozen</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Karpuzlu Frozen</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Kavunlu Frozen</span><span class="price">250 TL</span></div>
+<div class="menu-item"><span>Narlı Frozen</span><span class="price">250 TL</span></div>
+
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
+
+<section class="menu-list" id="tatli">
+<h2 class="section-title">Tatlılar</h2>
+
+<div class="menu-item"><span>Fıstık Dalgası</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Lotus Bisküvili Pasta</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Ballı Fıstıklı Pasta</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Red Velvet</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Aşk Pastası</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Yanardağ Çikolata</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Yanardağ Yaban Mersini</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Sufle</span><span class="price">260 TL</span></div>
+<div class="menu-item"><span>Tiramisu Cup</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Çikolatalı Cheesecake</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Muzlu Pasta</span><span class="price">240 TL</span></div>
+<div class="menu-item"><span>Antep Katmer</span><span class="price">280 TL</span></div>
+
+<div class="back" onclick="goBack()">← Menüye Dön</div>
+</section>
 
 
-<div class="sub-title">Sıcak Kahveler</div>
+
+<section class="menu-list" id="sicak-kahve">
+<h2 class="section-title">Sıcak Kahveler</h2>
 <div class="menu-item"><span>Nutella Mocha</span><span class="price">240 TL</span></div>
 <div class="menu-item"><span>Espresso Single</span><span class="price">130 TL</span></div>
 <div class="menu-item"><span>Espresso Double</span><span class="price">180 TL</span></div>
@@ -296,63 +323,12 @@ section{padding:110px 8%}
 <div class="menu-item"><span>Caramel Macchiato</span><span class="price">240 TL</span></div>
 <div class="menu-item"><span>Menengiç Kahvesi</span><span class="price">150 TL</span></div>
 <div class="menu-item"><span>Dibek Kahvesi</span><span class="price">150 TL</span></div>
-
-<div class="sub-title">Soğuk Kahveler</div>
-<div class="menu-item"><span>Iced Americano</span><span class="price">180 TL</span></div>
-<div class="menu-item"><span>Iced White Chocolate</span><span class="price">220 TL</span></div>
-<div class="menu-item"><span>Iced Cafe Latte</span><span class="price">200 TL</span></div>
-<div class="menu-item"><span>Affagato</span><span class="price">300 TL</span></div>
-<div class="menu-item"><span>Dondurmalı Kahve</span><span class="price">300 TL</span></div>
-
-<div class="sub-title">Milkshake</div>
-<div class="menu-item"><span>Çilekli Milkshake</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Karamelli Milkshake</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Muzlu Milkshake</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Çikolatalı Milkshake</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Vanilyalı Milkshake</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Oreo Milkshake</span><span class="price">250 TL</span></div>
-
-<div class="sub-title">Frozen</div>
-<div class="menu-item"><span>Çilekli Frozen</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Yeşil Elma Frozen</span><span class="price">250 TL</span></div>
-<div class="menu-item"><span>Karpuzlu Frozen</span><span class="price">250 TL</span></div>
-
-
-</section>
-<!-- ================= TATLILAR ================= -->
-<section class="menu-list" id="dessert">
-<h2 class="section-title">Tatlılar</h2>
-
-
-<div class="menu-item"><span>Fıstık Dalgası</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Lotus Bisküvili Pasta</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Ballı Fıstıklı Pasta</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Red Velvet</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Aşk Pastası</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Yanardağ Çikolata</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Yanardağ Yaban Mersini</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Sufle</span><span class="price">260TL</span></div>
-<div class="menu-item"><span>Tiramisu Cup</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Çikolatalı Cheesecake</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Muzlu Pasta</span><span class="price">240TL</span></div>
-<div class="menu-item"><span>Antep Katmer</span><span class="price">280TL</span></div>
-
-<div class="sub-title">Dondurmalar</div>
-<div class="menu-item"><span>Çilekli</span><span class="price">50 TL</span></div>
-<div class="menu-item"><span>Vanilyalı</span><span class="price">50 TL</span></div>
-<div class="menu-item"><span>Kakaolu</span><span class="price">50 TL</span></div>
-<div class="menu-item"><span>Limonlu</span><span class="price">50 TL</span></div>
-<div class="menu-item"><span>Karamel</span><span class="price">50 TL</span></div>
-<div class="menu-item"><span>Böğürtlen</span><span class="price">50 TL</span></div>
-
-
+<div class="back" onclick="goBack()">← Menüye Dön</div>
 </section>
 
-<!-- ================= NARGİLELER ================= -->
-<section class="menu-list" id="hookah">
+
+<section class="menu-list" id="nargile">
 <h2 class="section-title">Nargileler</h2>
-
-
 <div class="menu-item"><span>Anason</span><span class="price">400 TL</span></div>
 <div class="menu-item"><span>Pişmiş Şeftali</span><span class="price">400 TL</span></div>
 <div class="menu-item"><span>Üzüm</span><span class="price">400 TL</span></div>
@@ -369,49 +345,22 @@ section{padding:110px 8%}
 <div class="menu-item"><span>Elma</span><span class="price">400 TL</span></div>
 <div class="menu-item"><span>Kavun</span><span class="price">400 TL</span></div>
 <div class="menu-item"><span>Dondurma</span><span class="price">400 TL</span></div>
-
-
+<div class="back" onclick="goBack()">← Menüye Dön</div>
 </section>
 
 <script>
 function openMenu(id){
-  history.pushState({menu:id}, "", "#"+id);
-
   document.getElementById("covers").style.display="none";
   document.querySelectorAll(".menu-list").forEach(m=>m.style.display="none");
   document.getElementById(id).style.display="block";
   window.scrollTo(0,0);
 }
-
 function goBack(){
-  history.pushState({}, "", "#home");
   document.querySelectorAll(".menu-list").forEach(m=>m.style.display="none");
   document.getElementById("covers").style.display="block";
   window.scrollTo(0,0);
 }
-
-window.onpopstate = function(event){
-  if(event.state && event.state.menu){
-    openMenu(event.state.menu);
-  }else{
-    document.querySelectorAll(".menu-list").forEach(m=>m.style.display="none");
-    document.getElementById("covers").style.display="block";
-  }
-};
 </script>
-<section id="contact">
-  <h2 class="section-title">İletişim</h2>
-  <p style="text-align:center">
-    📍 İstanbul ZeytinBurnu Merv Caddesi 7B<br>
-    ☎ 0532 369 68 78<br>
-    ⏰ 09:00 03:00
-  </p>
-</section>
-
-<footer>
-  © 2026 Favela Cafe
-</footer>
-
 
 </body>
 </html>
